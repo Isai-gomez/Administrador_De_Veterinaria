@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 class AgregarCita extends Component {
   constructor() {
+    //Propiedades referenciadas y se igualan a los ampos del formulario
     super();
     this.nombreMascotaRet = React.createRef();
     this.propietarioRef = React.createRef();
@@ -18,9 +19,11 @@ class AgregarCita extends Component {
       hora: this.horaRef.current.value,
       sintomas: this.sintomasRef.current.value
     };
-    console.log(nuevaMascota);
+
     // enviar por props
+    this.props.crearCita(nuevaMascota);
     //resetiar el formulario
+    e.currentTarget.reset();
   };
   render() {
     return (
