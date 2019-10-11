@@ -25,7 +25,12 @@ class Cita extends Component {
             <span>Sintomas: </span> <br />
             {sintomas}
           </p>
-          <button className="btn btn-danger">Borrar &times;</button>
+          <button
+            onClick={() => this.props.borrarCita(this.props.idCitas)}
+            className="btn btn-danger"
+          >
+            Borrar &times;
+          </button>
         </div>
       </div>
     );
