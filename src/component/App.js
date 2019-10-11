@@ -20,7 +20,14 @@ class App extends Component {
     });
   };
   borrarCita = id => {
-    console.log("Eliminando..." + id);
+    //leer el state
+    const citas = { ...this.state.citas };
+    //Borrarlo del state
+    delete citas[id];
+    //Actualizar el state
+    this.setState({
+      citas: citas
+    });
   };
   render() {
     return (
